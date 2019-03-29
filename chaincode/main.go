@@ -1,7 +1,3 @@
-/**
-  @Author : hanxiaodong
-*/
-
 package main
 
 import (

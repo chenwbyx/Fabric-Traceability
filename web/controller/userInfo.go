@@ -1,7 +1,3 @@
-/**
-  @Author : hanxiaodong
-*/
-
 package controller
 
 import "github.com/kongyixueyuan.com/education/service"
@@ -13,7 +9,7 @@ type Application struct {
 type User struct {
 	LoginName	string
 	Password	string
-	IsAdmin	string
+	IsAdmin	    string
 }
 
 

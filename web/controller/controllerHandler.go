@@ -1,11 +1,3 @@
-/**
-  @Prject: goProjects
-  @Dev_Software: GoLand
-  @File : controllerHandler
-  @Time : 2018/10/18 14:31 
-  @Author : hanxiaodong
-*/
-
 package controller
 
 import (
