@@ -43,6 +43,9 @@
   white-space: normal;
   margin-top: 30px;
 }
+.queryResule .bottom p{
+  text-align: left;
+}
 p{
   text-align: right;
 }
