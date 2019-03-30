@@ -3,8 +3,8 @@
 [![Build Status](https://travis-ci.org/chenwbyx/Fabric-SDK-Traceability.svg?branch=master)](https://travis-ci.org/chenwbyx/Fabric-SDK-Traceability)  ![](https://img.shields.io/badge/language-go-blue.svg)
 
 
-> 一个基于 [Fabric-SDK-Go](https://github.com/hyperledger/fabric-sdk-go) 的商品溯源防伪查询系统
-> 在此之前请确保已安装Hyperledger Fabric（本项目基于Hyperledger Fabric v1.1)
+> 一个基于 [Fabric-SDK-Go](https://github.com/hyperledger/fabric-sdk-go) 的商品溯源防伪查询系统。
+> 在此之前请确保已安装 [Hyperledger Fabric](https://github.com/hyperledger/fabric)（本项目基于Hyperledger Fabric v1.1)
 
 ------
 
