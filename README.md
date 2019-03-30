@@ -9,11 +9,11 @@
 ------
 
 ### 所需环境
-    ```
-    go 1.10
-    docker 18.09.2
-    docker-compose 1.12.0
-    ```
+```
+go 1.10
+docker 18.09.2
+docker-compose 1.12.0
+```
 
 ### 安装及配置
 * Step 1：
@@ -31,5 +31,5 @@
 
 
 ------
-作者 [@chenwb](https://github.com/chenwbyx/)  
+作者 [@chenwb](https://github.com/chenwbyx/)
 2019 年 3 月 30 日
