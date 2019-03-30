@@ -18,6 +18,22 @@ package main
 毕（结）业：毕业，证书编号：11111111111111
 
  */
+
+ /**
+ 商品唯一ID：
+
+ 事件类型：
+
+ 商品名称：
+
+ 商品规格：
+
+ 商品来源：
+
+ 备注信息：
+
+ 录入时间：
+  */
 type Education struct {
 	ObjectType	string	`json:"docType"`
 	Name	string	`json:"Name"`		// 姓名
