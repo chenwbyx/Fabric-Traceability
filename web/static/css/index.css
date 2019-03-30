@@ -33,7 +33,14 @@ body {
   line-height: 50px;
   border-bottom: 1px solid #E6E6E6;
   padding-left: 20px;
-  font-size: 16px;
+  font-size: 18px;
+  color: #2EAFBB;
+}
+
+.h_m_l h6 {
+  height: 10px;
+  padding-right: 20px;
+  font-size: 10px;
   color: #2EAFBB;
 }
 
