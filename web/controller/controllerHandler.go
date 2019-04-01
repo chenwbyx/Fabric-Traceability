@@ -16,7 +16,12 @@ func (app *Application) LoginView(w http.ResponseWriter, r *http.Request)  {
 }
 
 func (app *Application) Index(w http.ResponseWriter, r *http.Request)  {
-	ShowView(w, r, "index.html", nil)
+	data := &struct {
+		Flag bool
+	}{
+		Flag:false,
+	}
+	ShowView(w, r, "index.html", data)
 }
 
 func (app *Application) Help(w http.ResponseWriter, r *http.Request)  {

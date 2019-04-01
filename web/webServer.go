@@ -14,11 +14,11 @@ func WebStart(app controller.Application)  {
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	// 指定路由信息(匹配请求)
-	http.HandleFunc("/", app.LoginView)
+	http.HandleFunc("/admin", app.LoginView)
 	http.HandleFunc("/login", app.Login)
 	http.HandleFunc("/loginout", app.LoginOut)
 
-	http.HandleFunc("/index", app.Index)
+	http.HandleFunc("/", app.Index)
 	http.HandleFunc("/help", app.Help)
 
 	http.HandleFunc("/addEduInfo", app.AddEduShow)
