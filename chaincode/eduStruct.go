@@ -52,7 +52,7 @@ type Commodity struct {
 	Des            string   `json:"des"`
 	Specification  string   `json:"specification"`  //规格
 	Source         string   `json:"source"`
-	Machining      string   `json:"machining"`    //加工方式
+	Machining      string   `json:"machining"`    //加工
 	Remarks        string   `json:"remarks"`    //备注信息
 	Principal      string   `json:"principal"`  //负责人
 	PhoneNumber    string   `json:"phoneNumber"`
