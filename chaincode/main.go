@@ -29,6 +29,16 @@ func (t *EducationChaincode) Invoke(stub shim.ChaincodeStubInterface) peer.Respo
 		return t.updateEdu(stub, args)		// 根据证书编号更新信息
 	}else if fun == "delEdu"{
 		return t.delEdu(stub, args)	// 根据证书编号删除信息
+	}else if fun == "addCom"{
+		return t.addCom(stub, args)
+	}else if fun == "queryComByCertNoAndName" {
+		return t.queryComByCertNoAndName(stub, args)
+	}else if fun == "queryComInfoByEntityID" {
+		return t.queryComInfoByEntityID(stub, args)
+	}else if fun == "updateCom" {
+		return t.updateCom(stub, args)
+	}else if fun == "delCom"{
+		return t.delCom(stub, args)
 	}
 
 	return shim.Error("指定的函数名称错误")
