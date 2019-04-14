@@ -148,7 +148,7 @@ func main() {
 		var edu service.Education
 		json.Unmarshal(result, &edu)
 		fmt.Println("根据证书编号与姓名查询信息成功：")
-		fmt.Println(edu)
+		//fmt.Println(edu)
 	}
 
 	// 根据身份证号码查询信息
@@ -159,7 +159,7 @@ func main() {
 		var edu service.Education
 		json.Unmarshal(result, &edu)
 		fmt.Println("根据身份证号码查询信息成功：")
-		fmt.Println(edu)
+		//fmt.Println(edu)
 	}
 
 	// 根据身份证号码查询信息
@@ -209,7 +209,7 @@ func main() {
 		var edu service.Education
 		json.Unmarshal(result, &edu)
 		fmt.Println("根据身份证号码查询信息成功：")
-		fmt.Println(edu)
+		//fmt.Println(edu)
 	}
 
 	// 根据证书编号与名称查询信息
@@ -220,7 +220,7 @@ func main() {
 		var edu service.Education
 		json.Unmarshal(result, &edu)
 		fmt.Println("根据证书编号与姓名查询信息成功：")
-		fmt.Println(edu)
+		//fmt.Println(edu)
 	}
 
 	/*// 删除信息
