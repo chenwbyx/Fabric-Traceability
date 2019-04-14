@@ -32,9 +32,27 @@ type Education struct {
 	Time    string  `json:"Time"`
 }
 
+type Commodity struct {
+	ObjectType	   string	`json:"docType"`
+	Primarykey     string   `json:"primarykey"`  //主键，唯一Id
+	Name	       string	`json:"Name"`
+	Type           string   `json:"type"`
+	Des            string   `json:"des"`
+	Specification  string   `json:"specification"`  //规格
+	Source         string   `json:"source"`
+	Machining      string   `json:"machining"`    //加工
+	Remarks        string   `json:"remarks"`    //备注信息
+	Principal      string   `json:"principal"`  //负责人
+	PhoneNumber    string   `json:"phoneNumber"`
+	Photo	string	`json:"Photo"`	            // 照片
+	Historys	[]HistoryItem	// 当前edu的历史记录
+	Time    string  `json:"Time"`   //时间
+}
+
 type HistoryItem struct {
 	TxId	string
 	Education	Education
+	Commodity   Commodity
 }
 
 type ServiceSetup struct {

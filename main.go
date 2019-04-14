@@ -83,6 +83,21 @@ func main() {
 		Time: time.Now().Format("2006-01-02 15:04:05"),
 	}
 
+	com := service.Commodity{
+		Primarykey:"001",
+		Name:"普洱茶",
+		Type:"采摘",
+		Des:"从地里采摘",
+		Specification:"500g",  //规格
+		Source:"普洱",
+		Machining:"晒干",    //加工
+		Remarks:"日光",    //备注信息
+		Principal:"张三",  //负责人
+		PhoneNumber:"123456789",
+		Photo:"/static/photo/11.png",   // 照片
+		Time: time.Now().Format("2006-01-02 15:04:05"),
+	}
+
 	edu2 := service.Education{
 		Name: "李四",
 		Gender: "男",
@@ -105,6 +120,13 @@ func main() {
 	}
 
 	msg, err := serviceSetup.SaveEdu(edu)
+	if err != nil {
+		fmt.Println(err.Error())
+	}else {
+		fmt.Println("信息发布成功, 交易编号为: " + msg)
+	}
+
+	msg, err = serviceSetup.SaveCom(com)
 	if err != nil {
 		fmt.Println(err.Error())
 	}else {
@@ -137,6 +159,17 @@ func main() {
 		var edu service.Education
 		json.Unmarshal(result, &edu)
 		fmt.Println("根据身份证号码查询信息成功：")
+		fmt.Println(edu)
+	}
+
+	// 根据身份证号码查询信息
+	result, err = serviceSetup.FindComInfoByEntityID("001")
+	if err != nil {
+		fmt.Println(err.Error())
+	} else {
+		var edu service.Education
+		json.Unmarshal(result, &edu)
+		fmt.Println("根据溯源ID查询信息成功：")
 		fmt.Println(edu)
 	}
 
