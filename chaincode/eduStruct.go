@@ -20,9 +20,11 @@ package main
  */
 
  /**
- 商品唯一ID：
+ 商品唯一ID(溯源编号)：
 
  事件类型：
+
+ 简介：
 
  商品名称：
 
@@ -32,12 +34,33 @@ package main
 
  加工方式：
 
+ 照片：
+
  备注信息：
 
- 录入人/设备ID：
+ 负责人：
+
+ 联系方式：
 
  录入时间：
   */
+type Commodity struct {
+	ObjectType	   string	`json:"docType"`
+	Primarykey     string   `json:"primarykey"`  //主键，唯一Id
+	Name	       string	`json:"Name"`
+	Type           string   `json:"type"`
+	Des            string   `json:"des"`
+	Specification  string   `json:"specification"`  //规格
+	Source         string   `json:"source"`
+	Machining      string   `json:"machining"`    //加工方式
+	Remarks        string   `json:"remarks"`    //备注信息
+	Principal      string   `json:"principal"`  //负责人
+	PhoneNumber    string   `json:"phoneNumber"`
+	Photo	string	`json:"Photo"`	            // 照片
+	Historys	[]HistoryItem	// 当前edu的历史记录
+	Time    string  `json:"Time"`   //时间
+}
+
 type Education struct {
 	ObjectType	string	`json:"docType"`
 	Name	string	`json:"Name"`		// 姓名
@@ -67,4 +90,5 @@ type Education struct {
 type HistoryItem struct {
 	TxId	string
 	Education	Education
+	Commodity   Commodity
 }
