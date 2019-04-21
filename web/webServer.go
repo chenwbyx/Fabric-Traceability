@@ -3,7 +3,7 @@ package web
 import (
 	"net/http"
 	"fmt"
-	"github.com/kongyixueyuan.com/education/web/controller"
+	"github.com/education/web/controller"
 )
 
 
