@@ -132,7 +132,7 @@ func (t *EducationChaincode) queryEduByCertNoAndName(stub shim.ChaincodeStubInte
 	}
 	CertNo := args[0]
 	name := args[1]
-	fmt.Println("queryEduByCertNoAndName",CertNo, " ",name)
+
 	// 拼装CouchDB所需要的查询字符串(是标准的一个JSON串)
 	// queryString := fmt.Sprintf("{\"selector\":{\"docType\":\"eduObj\", \"CertNo\":\"%s\"}}", CertNo)
 	queryString := fmt.Sprintf("{\"selector\":{\"docType\":\"%s\", \"CertNo\":\"%s\", \"Name\":\"%s\"}}", DOC_TYPE, CertNo, name)
@@ -160,7 +160,7 @@ func (t *EducationChaincode) queryEduInfoByEntityID(stub shim.ChaincodeStubInter
 	if err != nil {
 		return shim.Error("根据身份证号码查询信息失败")
 	}
-	fmt.Println("queryEduInfoByEntityID",b)
+
 	if b == nil {
 		return shim.Error("根据身份证号码没有查询到相关的信息")
 	}

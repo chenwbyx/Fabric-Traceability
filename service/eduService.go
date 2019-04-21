@@ -45,7 +45,7 @@ func (t *ServiceSetup) FindEduInfoByEntityID(entityID string) ([]byte, error){
 }
 
 func (t *ServiceSetup) FindEduByCertNoAndName(certNo, name string) ([]byte, error){
-	fmt.Println("FindEduByCertNoAndName",certNo," ",name)
+
 	req := channel.Request{ChaincodeID: t.ChaincodeID, Fcn: "queryEduByCertNoAndName", Args: [][]byte{[]byte(certNo), []byte(name)}}
 	respone, err := t.Client.Query(req)
 	if err != nil {
