@@ -160,7 +160,7 @@ func (t *EducationChaincode) queryEduInfoByEntityID(stub shim.ChaincodeStubInter
 	if err != nil {
 		return shim.Error("根据身份证号码查询信息失败")
 	}
-
+	fmt.Println("queryEduInfoByEntityID",b)
 	if b == nil {
 		return shim.Error("根据身份证号码没有查询到相关的信息")
 	}
