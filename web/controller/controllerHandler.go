@@ -152,6 +152,7 @@ func (app *Application) QueryPage(w http.ResponseWriter, r *http.Request)  {
 func (app *Application) FindCertByNoAndName(w http.ResponseWriter, r *http.Request)  {
 	certNo := r.FormValue("certNo")
 	name := r.FormValue("name")
+	fmt.Println("FindCertByNoAndName",certNo, " ",name)
 	result, err := app.Setup.FindEduByCertNoAndName(certNo, name)
 	var edu = service.Education{}
 	json.Unmarshal(result, &edu)
