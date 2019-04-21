@@ -17,7 +17,7 @@ docker-compose 1.12.0
 
 ### 安装及配置
 * Step 1：
-   * 创建并进入目录 $GOPATH/src/github.com/kongyixueyuan.com
+   * 创建并进入目录 $GOPATH/src/github.com/
    * 拉项目```git clone https://github.com/chenwbyx/Fabric-SDK-Traceability ```
    * 修改文件夹名字： ```mv Fabric-SDK-Traceability education```
    * 进入文件夹：```cd education```
