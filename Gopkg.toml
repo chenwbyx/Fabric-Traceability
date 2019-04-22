@@ -1,4 +1,4 @@
-ignored = ["github.com/education/chaincode"]
+ignored = ["github.com/chenwbyx/Fabric-Traceability/chaincode"]
 
 [[constraint]]
   # Release v1.0.0-alpha4

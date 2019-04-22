@@ -1,6 +1,6 @@
 package controller
 
-import "github.com/education/service"
+import "github.com/chenwbyx/Fabric-Traceability/service"
 
 type Application struct {
 	Setup *service.ServiceSetup

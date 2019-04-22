@@ -7,7 +7,7 @@ dev: build run
 ##### BUILD
 build:
 	@echo "Build ..."
-	@dep ensure
+	# @dep ensure
 	@go build
 	@echo "Build done"
 
@@ -25,7 +25,7 @@ env-down:
 ##### RUN
 run:
 	@echo "Start app ..."
-	@./education
+	@./Fabric-Traceability
 
 ##### CLEAN
 clean: env-down

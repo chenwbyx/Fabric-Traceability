@@ -4,11 +4,11 @@ import (
 	"os"
 	"fmt"
 	"time"
-	"github.com/education/sdkInit"
-	"github.com/education/service"
+	"github.com/chenwbyx/Fabric-Traceability/sdkInit"
+	"github.com/chenwbyx/Fabric-Traceability/service"
 	"encoding/json"
-	"github.com/education/web/controller"
-	"github.com/education/web"
+	"github.com/chenwbyx/Fabric-Traceability/web/controller"
+	"github.com/chenwbyx/Fabric-Traceability/web"
 )
 
 const (
@@ -22,7 +22,7 @@ func main() {
 	initInfo := &sdkInit.InitInfo{
 
 		ChannelID: "kevinkongyixueyuan",
-		ChannelConfig: os.Getenv("GOPATH") + "/src/github.com/education/fixtures/artifacts/channel.tx",
+		ChannelConfig: os.Getenv("GOPATH") + "/src/github.com/chenwbyx/Fabric-Traceability/fixtures/artifacts/channel.tx",
 
 		OrgAdmin:"Admin",
 		OrgName:"Org1",
@@ -30,7 +30,7 @@ func main() {
 
 		ChaincodeID: EduCC,
 		ChaincodeGoPath: os.Getenv("GOPATH"),
-		ChaincodePath: "github.com/education/chaincode/",
+		ChaincodePath: "github.com/chenwbyx/Fabric-Traceability/chaincode/",
 		UserName:"User1",
 	}
 

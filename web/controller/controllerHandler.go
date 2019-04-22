@@ -3,7 +3,7 @@ package controller
 import (
 	"net/http"
 	"encoding/json"
-	"github.com/education/service"
+	"github.com/chenwbyx/Fabric-Traceability/service"
 	"fmt"
 	"time"
 )

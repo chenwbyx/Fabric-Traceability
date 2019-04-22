@@ -58,7 +58,7 @@ client:
 
   # Root of the MSP directories with keys and certs.
   cryptoconfig:
-    path: ${GOPATH}/src/github.com/education/fixtures/crypto-config
+    path: ${GOPATH}/src/github.com/chenwbyx/Fabric-Traceability/fixtures/crypto-config
 
   # Some SDKs support pluggable KV stores, the properties under "credentialStore"
   # are implementation specific
@@ -250,7 +250,7 @@ orderers:
 
     tlsCACerts:
       # Certificate location absolute path
-      path: ${GOPATH}/src/github.com/education/fixtures/crypto-config/ordererOrganizations/kevin.kongyixueyuan.com/tlsca/tlsca.kevin.kongyixueyuan.com-cert.pem
+      path: ${GOPATH}/src/github.com/chenwbyx/Fabric-Traceability/fixtures/crypto-config/ordererOrganizations/kevin.kongyixueyuan.com/tlsca/tlsca.kevin.kongyixueyuan.com-cert.pem
 
 #
 # List of peers to send various requests to, including endorsement, query
@@ -277,7 +277,7 @@ peers:
 
     tlsCACerts:
       # Certificate location absolute path
-      path: ${GOPATH}/src/github.com/education/fixtures/crypto-config/peerOrganizations/org1.kevin.kongyixueyuan.com/tlsca/tlsca.org1.kevin.kongyixueyuan.com-cert.pem
+      path: ${GOPATH}/src/github.com/chenwbyx/Fabric-Traceability/fixtures/crypto-config/peerOrganizations/org1.kevin.kongyixueyuan.com/tlsca/tlsca.org1.kevin.kongyixueyuan.com-cert.pem
 
   peer1.org1.kevin.kongyixueyuan.com:
     # this URL is used to send endorsement and query requests
@@ -299,7 +299,7 @@ peers:
 
     tlsCACerts:
       # Certificate location absolute path
-      path: ${GOPATH}/src/github.com/education/fixtures/crypto-config/peerOrganizations/org1.kevin.kongyixueyuan.com/tlsca/tlsca.org1.kevin.kongyixueyuan.com-cert.pem
+      path: ${GOPATH}/src/github.com/chenwbyx/Fabric-Traceability/fixtures/crypto-config/peerOrganizations/org1.kevin.kongyixueyuan.com/tlsca/tlsca.org1.kevin.kongyixueyuan.com-cert.pem
 
 #
 # Fabric-CA is a special kind of Certificate Authority provided by Hyperledger Fabric which allows
@@ -311,7 +311,7 @@ certificateAuthorities:
     url: http://localhost:7054
     tlsCACerts:
       # Certificate location absolute path
-      path: ${GOPATH}/src/github.com/education/fixtures/crypto-config/peerOrganizations/org1.kevin.kongyixueyuan.com/ca/ca.org1.kevin.kongyixueyuan.com-cert.pem
+      path: ${GOPATH}/src/github.com/chenwbyx/Fabric-Traceability/fixtures/crypto-config/peerOrganizations/org1.kevin.kongyixueyuan.com/ca/ca.org1.kevin.kongyixueyuan.com-cert.pem
 
     # Fabric-CA supports dynamic user enrollment via REST APIs. A "root" user, a.k.a registrar, is
     # needed to enroll and invoke new users.
