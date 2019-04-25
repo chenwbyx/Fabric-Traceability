@@ -98,26 +98,6 @@ func main() {
 		Time: time.Now().Format("2006-01-02 15:04:05"),
 	}
 
-	edu2 := service.Education{
-		Name: "李四",
-		Gender: "男",
-		Nation: "汉",
-		EntityID: "102",
-		Place: "上海",
-		BirthDay: "1992年02月01日",
-		EnrollDate: "2010年9月",
-		GraduationDate: "2014年7月",
-		SchoolName: "中国人民大学",
-		Major: "行政管理",
-		QuaType: "普通",
-		Length: "四年",
-		Mode: "普通全日制",
-		Level: "本科",
-		Graduation: "毕业",
-		CertNo: "222",
-		Photo: "/static/photo/22.png",
-		Time: time.Now().Format("2006-01-02 15:04:05"),
-	}
 
 	msg, err := serviceSetup.SaveEdu(edu)
 	if err != nil {
@@ -133,26 +113,7 @@ func main() {
 		fmt.Println("信息发布成功, 交易编号为: " + msg)
 	}
 
-	msg, err = serviceSetup.SaveEdu(edu2)
-	if err != nil {
-		fmt.Println(err.Error())
-	}else {
-		fmt.Println("信息发布成功, 交易编号为: " + msg)
-	}
-
-	// 根据证书编号与名称查询信息
-	result, err := serviceSetup.FindEduByCertNoAndName("222","李四")
-	if err != nil {
-		fmt.Println(err.Error())
-	} else {
-		var edu service.Education
-		json.Unmarshal(result, &edu)
-		fmt.Println("根据证书编号与姓名查询信息成功：")
-		//fmt.Println(edu)
-	}
-
-	// 根据身份证号码查询信息
-	result, err = serviceSetup.FindEduInfoByEntityID("101")
+	result, err := serviceSetup.FindEduInfoByEntityID("101")
 	if err != nil {
 		fmt.Println(err.Error())
 	} else {
@@ -162,7 +123,6 @@ func main() {
 		//fmt.Println(edu)
 	}
 
-	// 根据身份证号码查询信息
 	result, err = serviceSetup.FindComInfoByEntityID("001")
 	if err != nil {
 		fmt.Println(err.Error())
@@ -173,7 +133,6 @@ func main() {
 		fmt.Println(edu)
 	}
 
-	// 修改/添加信息
 	info := service.Education{
 		Name: "张三",
 		Gender: "男",
@@ -201,7 +160,6 @@ func main() {
 		fmt.Println("信息操作成功, 交易编号为: " + msg)
 	}
 
-	// 根据身份证号码查询信息
 	result, err = serviceSetup.FindEduInfoByEntityID("101")
 	if err != nil {
 		fmt.Println(err.Error())
@@ -223,7 +181,7 @@ func main() {
 		//fmt.Println(edu)
 	}
 
-	/*// 删除信息
+	/*
 	msg, err = serviceSetup.DelEdu("101")
 	if err != nil {
 		fmt.Println(err.Error())
