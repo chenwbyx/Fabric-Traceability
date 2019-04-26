@@ -189,17 +189,7 @@ func main() {
 		fmt.Println("信息删除成功, 交易编号为: " + msg)
 	}
 
-	// 根据身份证号码查询信息
-	result, err = serviceSetup.FindEduInfoByEntityID("101")
-	if err != nil {
-		fmt.Println(err.Error())
-		fmt.Println("根据身份证号码查询信息失败，指定身份证号码的信息不存在或已被删除...")
-	} else {
-		var edu service.Education
-		json.Unmarshal(result, &edu)
-		fmt.Println("根据身份证号码查询信息成功：")
-		fmt.Println(edu)
-	}*/
+	*/
 
 	//===========================================//
 

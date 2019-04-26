@@ -19,24 +19,24 @@
         <ul class="m_s_l_ul">
           <li class="leftMenu0 index">
             <span class="icon_list">&nbsp;</span>
-            <a href="javascript:void(0);">学籍学历查询范围</a>
+            <a href="javascript:void(0);">商品溯源查询范围</a>
           </li>
         </ul>
 
-        <div class="m_s_l_menu">学历查询</div>
+        <div class="m_s_l_menu">查询</div>
         <ul class="m_s_l_ul">
           <li class="leftMenu1">
             <span class="icon_list">&nbsp;</span>
-            <a href="/queryPage">根据证书编号查询</a>
+            <a href="/queryPage">根据商品名编号查询</a>
           </li>
           <li class="leftMenu2">
             <span class="icon_list">&nbsp;</span>
-            <a href="/queryPage2">根据身份证号查询</a>
+            <a href="/queryPage2">根据溯源编号查询</a>
           </li>
           {{if eq .CurrentUser.IsAdmin "T"}}
             <li class="leftMenu3">
               <span class="icon_list">&nbsp;</span>
-              <a href="/addEduInfo">添加学历信息</a>
+              <a href="/addEduInfo">添加溯源信息</a>
             </li>
           {{end}}
           <li class="leftMenu4">
@@ -49,11 +49,11 @@
           </li>
         </ul>
 
-        <div class="m_s_l_menu">学籍查询</div>
+        <div class="m_s_l_menu">溯源查询</div>
         <ul class="m_s_l_ul">
           <li class="onread leftMenu5">
             <span class="icon_list">&nbsp;</span>
-            <a href="javascript:void(0);">学籍查询</a>
+            <a href="javascript:void(0);">溯源查询</a>
           </li>
         </ul>
       </div>

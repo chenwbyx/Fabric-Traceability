@@ -90,6 +90,15 @@ body {
   background: url(https://t1.chei.com.cn/chsi/images/2014/icon_index3.png) no-repeat 0 -47px;
 }
 
+.h_m_div3_t h3.i03 {
+  text-align: left;
+  padding-left: 66px;
+  height: 47px;
+  line-height: 47px;
+  margin: 5px 0;
+  background: url(https://t1.chei.com.cn/chsi/images/2014/icon_index3.png) no-repeat 0 -94px;
+}
+
 .h_m_div3_t h3 a, .h_m_div3_t h3 a:link, .h_m_div3_t h3 a:visited {
   color: #333333;
 }
