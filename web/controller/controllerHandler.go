@@ -86,7 +86,25 @@ func (app *Application) AddEduShow(w http.ResponseWriter, r *http.Request)  {
 func (app *Application) AddEdu(w http.ResponseWriter, r *http.Request)  {
 
 	com := service.Commodity{
+		ObjectType:r.FormValue("docType"),
+		Primarykey:r.FormValue("primarykey"),
+		Name:r.FormValue("name"),
+		Des:r.FormValue("des"),
+		Specification:r.FormValue("specification"),
+		Source:r.FormValue("source"),
+		Machining:r.FormValue("machining"),
+		Remarks:r.FormValue("remarks"),
+		Principal:r.FormValue("principal"),
+		PhoneNumber:r.FormValue("phoneNumber"),
+		Photo:r.FormValue("photo"),
 
+		ShelfLife:r.FormValue("shelfLife"),
+		StorageMethod:r.FormValue("storageMethod"),
+		Brand:r.FormValue("brand"),
+		Vendor:r.FormValue("vendor"),
+		PlaceOfProduction:r.FormValue("placeOfProduction"),
+		ExecutiveStandard:r.FormValue("executiveStandard"),
+		Time:time.Now().Format("2006-01-02 15:04:05"),
 	}
 
 	app.Setup.SaveCom(com)
