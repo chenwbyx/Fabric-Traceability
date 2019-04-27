@@ -271,11 +271,10 @@ func (app *Application) FindByID(w http.ResponseWriter, r *http.Request)  {
 func (app *Application) ModifyShow(w http.ResponseWriter, r *http.Request)  {
 	// 根据证书编号与姓名查询信息
 	entityID := r.FormValue("entityID")
-	fmt.Println(entityID)
 	result, err := app.Setup.FindComInfoByEntityID(entityID)
 	var com = service.Commodity{}
 	json.Unmarshal(result, &com)
-	fmt.Println(com)
+
 	data := &struct {
 		Com service.Commodity
 		CurrentUser User
@@ -321,6 +320,28 @@ func (app *Application) ModifyShow(w http.ResponseWriter, r *http.Request)  {
 }
 
 func (app *Application) Modify(w http.ResponseWriter, r *http.Request) {
+	com := service.Commodity{
+		Type:r.FormValue("docType"),
+		Primarykey:r.FormValue("primarykey"),
+		Name:r.FormValue("name"),
+		Des:r.FormValue("des"),
+		Specification:r.FormValue("specification"),
+		Source:r.FormValue("source"),
+		Machining:r.FormValue("machining"),
+		Remarks:r.FormValue("remarks"),
+		Principal:r.FormValue("principal"),
+		PhoneNumber:r.FormValue("phoneNumber"),
+		Photo:r.FormValue("photo"),
+
+		ShelfLife:r.FormValue("shelfLife"),
+		StorageMethod:r.FormValue("storageMethod"),
+		Brand:r.FormValue("brand"),
+		Vendor:r.FormValue("vendor"),
+		PlaceOfProduction:r.FormValue("placeOfProduction"),
+		ExecutiveStandard:r.FormValue("executiveStandard"),
+		Time:time.Now().Format("2006-01-02 15:04:05"),
+	}
+	/*
 	edu := service.Education{
 		Name:r.FormValue("name"),
 		Gender:r.FormValue("gender"),
@@ -341,9 +362,9 @@ func (app *Application) Modify(w http.ResponseWriter, r *http.Request) {
 		Photo:r.FormValue("photo"),
 		Time:time.Now().Format("2006-01-02 15:04:05"),
 	}
-
+	*/
 	//transactionID, err := app.Setup.ModifyEdu(edu)
-	app.Setup.ModifyEdu(edu)
+	app.Setup.ModifyCom(com)
 
 	/*data := &struct {
 		Edu service.Education
@@ -365,7 +386,6 @@ func (app *Application) Modify(w http.ResponseWriter, r *http.Request) {
 	ShowView(w, r, "modify.html", data)
 	*/
 
-	r.Form.Set("certNo", edu.CertNo)
-	r.Form.Set("name", edu.Name)
-	app.FindCertByNoAndName(w, r)
+	r.Form.Set("entityID", com.Primarykey)
+	app.FindByID(w, r)
 }
