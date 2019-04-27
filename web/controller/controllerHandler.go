@@ -271,10 +271,11 @@ func (app *Application) FindByID(w http.ResponseWriter, r *http.Request)  {
 func (app *Application) ModifyShow(w http.ResponseWriter, r *http.Request)  {
 	// 根据证书编号与姓名查询信息
 	entityID := r.FormValue("entityID")
+	fmt.Println(entityID)
 	result, err := app.Setup.FindComInfoByEntityID(entityID)
 	var com = service.Commodity{}
 	json.Unmarshal(result, &com)
-
+	fmt.Println(com)
 	data := &struct {
 		Com service.Commodity
 		CurrentUser User
@@ -286,7 +287,7 @@ func (app *Application) ModifyShow(w http.ResponseWriter, r *http.Request)  {
 		Flag:true,
 		Msg:"",
 	}
-	fmt.Println(com)
+
 	if err != nil {
 		data.Msg = err.Error()
 		data.Flag = true
