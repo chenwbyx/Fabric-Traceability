@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>修改信息</title>
+    <title>增加信息</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="/static/css/reset.css" rel="stylesheet">
     <!-- Bootstrap3.3.5 CSS -->
@@ -15,7 +15,7 @@
 <body>
 <div class="container">
     <div class="queryResule">
-        <h2>修改高等教育学历信息</h2>
+        <h2>增加商品溯源信息</h2>
         <div class="back">
           {{if eq .CurrentUser.IsAdmin "T"}}
               <a href="/addEduInfo">添加信息</a>
@@ -26,101 +26,101 @@
         <div class="top">
               <div class="left">
                   <p>
-                      <span>姓名：</span>
+                      <span>事件类型：</span>
                       <span>
-                        <input type="text" name="name" value="{{.Edu.Name}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='姓名'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='姓名';this.className ='input_text'}" accesskey="n" type="text" placeholder="姓名" size="25" autocomplete="off">
+                        <input type="text" name="docType" value="{{.Com.Type}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='事件类型'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='事件类型';this.className ='input_text'}" accesskey="n" type="text" placeholder="事件类型" size="25" autocomplete="off">
                       </span>
                   </p>
                   <p>
-                      <span>籍贯：</span>
+                      <span>溯源编号：</span>
                       <span>
-                        <input type="text" name="place" value="{{.Edu.Place}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='籍贯'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='籍贯';this.className ='input_text'}" accesskey="n" type="text" placeholder="籍贯" size="25" autocomplete="off">
+                        <input type="text" name="primarykey" value="{{.Com.Primarykey}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='溯源编号'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='溯源编号';this.className ='input_text'}" accesskey="n" type="text" placeholder="溯源编号" size="25" autocomplete="off">
                       </span>
                   </p>
                   <p>
-                      <span>民族：</span>
+                      <span>商品名称：</span>
                       <span>
-                        <input type="text" name="nation" value="{{.Edu.Nation}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='民族'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='民族';this.className ='input_text'}" accesskey="n" type="text" placeholder="民族" size="25" autocomplete="off">
+                        <input type="text" name="name" value="{{.Com.Name}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='商品名称'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='商品名称';this.className ='input_text'}" accesskey="n" type="text" placeholder="商品名称" size="25" autocomplete="off">
                       </span>
                   </p>
                   <p>
-                      <span>入学日期：</span>
+                      <span>品牌：</span>
                       <span>
-                        <input type="text" name="enrollDate" value="{{.Edu.EnrollDate}}"class="input_text" tabindex="1" onfocus="if(this.placeholder=='入学日期'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='入学日期';this.className ='input_text'}" accesskey="n" type="text" placeholder="入学日期" size="25" autocomplete="off">
+                        <input type="text" name="brand" value="{{.Com.Brand}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='品牌'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='品牌';this.className ='input_text'}" accesskey="n" type="text" placeholder="品牌" size="25" autocomplete="off" placeholder="">
                       </span>
                   </p>
                   <p>
-                      <span>学校名称：</span>
+                      <span>描述：</span>
                       <span>
-                        <input type="text" name="schoolName" value="{{.Edu.SchoolName}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='学校名称'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='学校名称';this.className ='input_text'}" accesskey="n" type="text" placeholder="学校名称" size="25" autocomplete="off">
+                        <input type="text" name="des" value="{{.Com.Des}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='描述'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='描述';this.className ='input_text'}" accesskey="n" type="text" placeholder="描述" size="25" autocomplete="off">
                       </span>
                   </p>
                   <p>
-                      <span>学历类别：</span>
+                      <span>规格：</span>
                       <span>
-                        <input type="text" name="quaType" value="{{.Edu.QuaType}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='学历类别'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='学历类别';this.className ='input_text'}" accesskey="n" type="text" placeholder="学历类别" size="25" autocomplete="off">
+                        <input type="text" name="specification" value="{{.Com.Specification}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='规格'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='规格';this.className ='input_text'}" accesskey="n" type="text" placeholder="规格" size="25" autocomplete="off">
                       </span>
                   </p>
                   <p>
-                      <span>层次：</span>
+                      <span>商品来源：</span>
                       <span>
-                        <input type="text" name="level" value="{{.Edu.Level}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='层次'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='层次';this.className ='input_text'}" accesskey="n" type="text" placeholder="层次" size="25" autocomplete="off">
+                        <input type="text" name="source" value="{{.Com.Source}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='商品来源'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='商品来源';this.className ='input_text'}" accesskey="n" type="text" placeholder="商品来源" size="25" autocomplete="off">
                       </span>
                   </p>
                   <p>
-                      <span>毕(结)业：</span>
+                      <span>加工方式：</span>
                       <span>
-                        <input type="text" name="graduation" value="{{.Edu.Graduation}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='毕业/结业'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='毕业/结业';this.className ='input_text'}" accesskey="n" type="text" placeholder="毕业/结业" size="25" autocomplete="off">
+                        <input type="text" name="machining" value="{{.Com.Machining}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='毕业/结业'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='毕业/结业';this.className ='input_text'}" accesskey="n" type="text" placeholder="毕业/结业" size="25" autocomplete="off">
                       </span>
                   </p>
               </div>
               <div class="right">
                   <p>
-                      <span>性别：</span>
+                      <span>备注信息：</span>
                       <span>
-                        <input type="text" name="gender" value="{{.Edu.Gender}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='性别'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='性别';this.className ='input_text'}" accesskey="n" type="text" placeholder="性别" size="25" autocomplete="off">
+                        <input type="text" name="remarks" value="{{.Com.Remarks}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='备注信息'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='备注信息';this.className ='input_text'}" accesskey="n" type="text" placeholder="备注信息" size="25" autocomplete="off">
                       </span>
                   </p>
                   <p>
-                      <span>出生日期：</span>
+                      <span>负责人：</span>
                       <span>
-                        <input type="text" name="birthDay" value="{{.Edu.BirthDay}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='出生日期'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='出生日期';this.className ='input_text'}" accesskey="n" type="text" placeholder="出生日期" size="25" autocomplete="off">
+                        <input type="text" name="principal" value="{{.Com.Principal}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='负责人'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='负责人';this.className ='input_text'}" accesskey="n" type="text" placeholder="负责人" size="25" autocomplete="off">
                       </span>
                   </p>
                   <p>
-                      <span>身份证号：</span>
+                      <span>负责人电话：</span>
                       <span>
-                        <input type="text" name="entityID" value="{{.Edu.EntityID}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='身份证号'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='身份证号';this.className ='input_text'}" accesskey="n" type="text" placeholder="身份证号" size="25" autocomplete="off">
+                        <input type="text" name="phoneNumber" value="{{.Com.PhoneNumber}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='负责人电话'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='负责人电话';this.className ='input_text'}" accesskey="n" type="text" placeholder="负责人电话" size="25" autocomplete="off">
                       </span>
                   </p>
                   <p>
-                      <span>毕(结)业日期：</span>
+                      <span>保质期：</span>
                       <span>
-                        <input type="text" name="graduationDate" value="{{.Edu.GraduationDate}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='毕(结)业日期'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='毕(结)业日期';this.className ='input_text'}" accesskey="n" type="text" placeholder="毕(结)业日期" size="25" autocomplete="off">
+                        <input type="text" name="shelfLife" value="{{.Com.ShelfLife}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='保质期'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='保质期';this.className ='input_text'}" accesskey="n" type="text" placeholder="保质期" size="25" autocomplete="off">
                       </span>
                   </p>
                   <p>
-                      <span>专业：</span>
+                      <span>储藏方式：</span>
                       <span>
-                        <input type="text" name="major" value="{{.Edu.Major}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='专业'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='专业';this.className ='input_text'}" accesskey="n" type="text" placeholder="专业" size="25" autocomplete="off">
+                        <input type="text" name="storageMethod" value="{{.Com.StorageMethod}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='储藏方式'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='储藏方式';this.className ='input_text'}" accesskey="n" type="text" placeholder="储藏方式" size="25" autocomplete="off">
                       </span>
                   </p>
                   <p>
-                      <span>学习形式：</span>
+                      <span>生产厂商：</span>
                       <span>
-                        <input type="text" name="mode" value="{{.Edu.Mode}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='学习形式'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='学习形式';this.className ='input_text'}" accesskey="n" type="text" placeholder="学习形式" size="25" autocomplete="off" placeholder="">
+                        <input type="text" name="vendor" value="{{.Com.Vendor}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='生产厂商'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='生产厂商';this.className ='input_text'}" accesskey="n" type="text" placeholder="生产厂商" size="25" autocomplete="off">
                       </span>
                   </p>
                   <p>
-                      <span>学制：</span>
+                      <span>生产地：</span>
                       <span>
-                        <input type="text" name="length" value="{{.Edu.Length}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='学制'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='学制';this.className ='input_text'}" accesskey="n" type="text" placeholder="学制" size="25" autocomplete="off">
+                        <input type="text" name="placeOfProduction" value="{{.Com.PlaceOfProduction}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='生产地'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='生产地';this.className ='input_text'}" accesskey="n" type="text" placeholder="生产地" size="25" autocomplete="off">
                       </span>
                   </p>
                   <p>
-                      <span>证书编号：</span>
+                      <span>执行标准：</span>
                       <span>
-                        <input type="text" name="certNo" value="{{.Edu.CertNo}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='证书编号'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='证书编号';this.className ='input_text'}" accesskey="n" type="text" placeholder="证书编号" size="25" autocomplete="off">
+                        <input type="text" name="executiveStandard" value="{{.Com.ExecutiveStandard}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='执行标准'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='执行标准';this.className ='input_text'}" accesskey="n" type="text" placeholder="执行标准" size="25" autocomplete="off" placeholder="">
                       </span>
                   </p>
               </div>
@@ -136,7 +136,7 @@
             </div>
         </div>
         <input type="hidden" name="photo" id="photo" value="{{.Edu.Photo}}"/>
-        <button type="button" name="button" class="btn">修改学历信息</button>
+        <button type="button" name="button" class="btn">修改商品信息</button>
         </form>
     </div>
     <!-- data-backdrop="false"去除遮罩层  -->
@@ -145,7 +145,7 @@
             <div class="modal-content">
                 <p class="text-center mb-0" style="height:42px;line-height:42px;margin:0;">
                     <i class="fa fa-check-circle text-success mr-1" aria-hidden="true"></i>
-                    请输入学历所必需的相关信息
+                    请输入商品所必需的相关信息
                 </p>
             </div>
         </div>

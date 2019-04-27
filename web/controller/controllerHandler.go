@@ -86,7 +86,7 @@ func (app *Application) AddEduShow(w http.ResponseWriter, r *http.Request)  {
 func (app *Application) AddEdu(w http.ResponseWriter, r *http.Request)  {
 
 	com := service.Commodity{
-		ObjectType:r.FormValue("docType"),
+		Type:r.FormValue("docType"),
 		Primarykey:r.FormValue("primarykey"),
 		Name:r.FormValue("name"),
 		Des:r.FormValue("des"),
@@ -270,7 +270,29 @@ func (app *Application) FindByID(w http.ResponseWriter, r *http.Request)  {
 
 func (app *Application) ModifyShow(w http.ResponseWriter, r *http.Request)  {
 	// 根据证书编号与姓名查询信息
-	certNo := r.FormValue("certNo")
+	certNo := r.FormValue("Primarykey")
+	result, err := app.Setup.FindComInfoByEntityID(certNo)
+	var com = service.Commodity{}
+	json.Unmarshal(result, &com)
+
+	data := &struct {
+		Com service.Commodity
+		CurrentUser User
+		Msg string
+		Flag bool
+	}{
+		Com:com,
+		CurrentUser:cuser,
+		Flag:true,
+		Msg:"",
+	}
+
+	if err != nil {
+		data.Msg = err.Error()
+		data.Flag = true
+	}
+	/*
+	certNo := r.FormValue("Primarykey")
 	name := r.FormValue("name")
 	result, err := app.Setup.FindEduByCertNoAndName(certNo, name)
 
@@ -293,7 +315,7 @@ func (app *Application) ModifyShow(w http.ResponseWriter, r *http.Request)  {
 		data.Msg = err.Error()
 		data.Flag = true
 	}
-
+*/
 	ShowView(w, r, "modify.html", data)
 }
 

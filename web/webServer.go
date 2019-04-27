@@ -24,8 +24,8 @@ func WebStart(app controller.Application)  {
 	http.HandleFunc("/addEduInfo", app.AddEduShow)
 	http.HandleFunc("/addEdu", app.AddEdu)
 
-	http.HandleFunc("/queryPage", app.QueryPage)
-	http.HandleFunc("/query", app.FindCertByNoAndName)
+	//http.HandleFunc("/queryPage", app.QueryPage)
+	//http.HandleFunc("/query", app.FindCertByNoAndName)
 
 	http.HandleFunc("/queryPage2", app.QueryPage2)
 	http.HandleFunc("/query2", app.FindByID)

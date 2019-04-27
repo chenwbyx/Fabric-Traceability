@@ -45,7 +45,8 @@ package main
  录入时间：
   */
 type Commodity struct {
-	ObjectType	   string	`json:"docType"`  //事件类型
+	ObjectType	   string	`json:"docType"`
+	Type           string	`json:"type"`  //事件类型
 	Primarykey     string   `json:"primarykey"`  //主键，唯一Id
 	Name	       string	`json:"name"`
 	Des            string   `json:"des"`  //描述

@@ -84,7 +84,7 @@ func main() {
 	}
 
 	com := service.Commodity{
-		ObjectType:"采摘",
+		Type:"采摘",
 		Primarykey:"001",
 		Name:"普洱茶",
 		Des:"从地里采摘",
