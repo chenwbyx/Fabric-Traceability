@@ -298,9 +298,6 @@ func (t *EducationChaincode) delEdu(stub shim.ChaincodeStubInterface, args []str
  *2019-4-14
  */
 
-
-
-
 func PutCom(stub shim.ChaincodeStubInterface, com Commodity) ([]byte, bool) {
 
 	com.ObjectType = DOC_COM_TYPE
@@ -514,7 +511,16 @@ func (t *EducationChaincode) updateCom(stub shim.ChaincodeStubInterface, args []
 	result.Remarks = info.Remarks
 	result.Principal = info.Principal
 	result.PhoneNumber = info.PhoneNumber
+
+	result.ShelfLife = info.ShelfLife
+	result.StorageMethod = info.StorageMethod
+	result.Brand = info.Brand
+	result.Vendor = info.Vendor
+	result.PlaceOfProduction = info.PlaceOfProduction
+	result.ExecutiveStandard = info.ExecutiveStandard
+
 	result.Time = info.Time
+
 
 	_, bl = PutCom(stub, result)
 	if !bl {

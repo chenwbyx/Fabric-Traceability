@@ -95,6 +95,12 @@ func main() {
 		Principal:"张三",  //负责人
 		PhoneNumber:"123456789",
 		Photo:"/static/photo/11.png",   // 照片
+		ShelfLife:"一年",
+		StorageMethod:"避光，常温",
+		Brand:"普洱",
+		Vendor:"云南某某厂",
+		PlaceOfProduction:"云南",
+		ExecutiveStandard:"ACB123456",
 		Time: time.Now().Format("2006-01-02 15:04:05"),
 	}
 

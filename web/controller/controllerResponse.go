@@ -21,7 +21,6 @@ func ShowView(w http.ResponseWriter, r *http.Request, templateName string, data 
 	err = resultTemplate.Execute(w, data)
 	if err != nil {
 		fmt.Printf("在模板中融合数据时发生错误: %v", err)
-		//fmt.Fprintf(w, "显示在客户端浏览器中的错误信息")
 		return
 	}
 

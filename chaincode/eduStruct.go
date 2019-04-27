@@ -45,20 +45,28 @@ package main
  录入时间：
   */
 type Commodity struct {
-	ObjectType	   string	`json:"docType"`
+	ObjectType	   string	`json:"docType"`  //事件类型
 	Primarykey     string   `json:"primarykey"`  //主键，唯一Id
 	Name	       string	`json:"Name"`
-	Type           string   `json:"type"`
-	Des            string   `json:"des"`
+	Type           string   `json:"type"`  //加工方式
+	Des            string   `json:"des"`  //描述
 	Specification  string   `json:"specification"`  //规格
-	Source         string   `json:"source"`
+	Source         string   `json:"source"`  //商品来源
 	Machining      string   `json:"machining"`    //加工
 	Remarks        string   `json:"remarks"`    //备注信息
 	Principal      string   `json:"principal"`  //负责人
 	PhoneNumber    string   `json:"phoneNumber"`
-	Photo	string	`json:"Photo"`	            // 照片
-	Historys	[]HistoryItem	// 当前edu的历史记录
-	Time    string  `json:"Time"`   //时间
+	Photo	       string	`json:"Photo"`	            // 照片
+
+	ShelfLife      string   `json:"shelfLife"`   //保质期
+	StorageMethod  string   `json:"storageMethod"`  //储藏方式
+	Brand          string   `json:"brand"`  //品牌
+	Vendor         string   `json:"vendor"`  //生产厂商
+	PlaceOfProduction   string   `json:"placeOfProduction"`  //生产地
+	ExecutiveStandard   string   `json:"executiveStandard"`  //执行标准
+
+ 	Historys	   []HistoryItem	// 当前com的历史记录
+	Time           string  `json:"Time"`   //时间
 }
 
 type Education struct {

@@ -18,27 +18,27 @@
             <div id="tableDiv">
                 <table id="table" style="margin: 0 auto;">
                     <tr>
-                        <td>姓名</td>
-                        <td>出生日期</td>
-                        <td>身份证号</td>
-                        <td>学校名称</td>
-                        <td>入学日期</td>
-                        <td>毕(结)业日期</td>
-                        <td>专业</td>
-                        <td>层次</td>
+                        <td>事件类型</td>
+                        <td>商品名称</td>
+                        <td>编号</td>
+                        <td>描述</td>
+                        <td>加工方式</td>
+                        <td>规格</td>
+                        <td>来源</td>
+                        <td>备注信息</td>
                         <td>修改时间</td>
                     </tr>
-                    {{range .Edu.Historys}}
+                    {{range .Com.Historys}}
                         <tr>
-                            <td>{{.Education.Name}}</td>
-                            <td>{{.Education.BirthDay}}</td>
-                            <td>{{.Education.EntityID}}</td>
-                            <td>{{.Education.SchoolName}}</td>
-                            <td>{{.Education.EnrollDate}}</td>
-                            <td>{{.Education.GraduationDate}}</td>
-                            <td>{{.Education.Major}}</td>
-                            <td>{{.Education.Level}}</td>
-                            <td>{{.Education.Time}}</td>
+                            <td>{{.Commodity.ObjectType}}</td>
+                            <td>{{.Commodity.Name}}</td>
+                            <td>{{.Commodity.Primarykey}}</td>
+                            <td>{{.Commodity.Des}}</td>
+                            <td>{{.Commodity.Type}}</td>
+                            <td>{{.Commodity.Specification}}</td>
+                            <td>{{.Commodity.Source}}</td>
+                            <td>{{.Commodity.Remarks}}</td>
+                            <td>{{.Commodity.Time}}</td>
                         </tr>
                     {{end}}
                 </table>
@@ -47,80 +47,64 @@
           <div class="top">
               <div class="left">
                   <p>
-                      <span>姓名：</span>
-                      <span>{{.Edu.Name}}</span>
+                      <span>商品名称：</span>
+                      <span>{{.Com.Name}}</span>
                   </p>
                   <p>
-                      <span>籍贯：</span>
-                      <span>{{.Edu.Place}}</span>
+                      <span>编号：</span>
+                      <span>{{.Com.Primarykey}}</span>
                   </p>
                   <p>
-                      <span>民族：</span>
-                      <span>{{.Edu.Nation}}</span>
+                      <span>规格：</span>
+                      <span>{{.Com.Specification}}</span>
                   </p>
                   <p>
-                      <span>入学日期：</span>
-                      <span>{{.Edu.EnrollDate}}</span>
+                      <span>描述：</span>
+                      <span>{{.Com.Des}}</span>
                   </p>
                   <p>
-                      <span>学校名称：</span>
-                      <span>{{.Edu.SchoolName}}</span>
+                      <span>来源：</span>
+                      <span>{{.Com.Source}}</span>
                   </p>
                   <p>
-                      <span>学历类别：</span>
-                      <span>{{.Edu.QuaType}}</span>
-                  </p>
-                  <p>
-                      <span>层次：</span>
-                      <span>{{.Edu.Level}}</span>
-                  </p>
-                  <p>
-                      <span>毕(结)业：</span>
-                      <span>{{.Edu.Graduation}}</span>
+                      <span>备注信息：</span>
+                      <span>{{.Com.Remarks}}</span>
                   </p>
               </div>
               <div class="right">
                   <p>
-                      <span>性别：</span>
-                      <span>{{.Edu.Gender}}</span>
+                      <span>保质期：</span>
+                      <span>{{.Com.ShelfLife}}</span>
                   </p>
                   <p>
-                      <span>出生日期：</span>
-                      <span>{{.Edu.BirthDay}}</span>
+                      <span>储存方式：</span>
+                      <span>{{.Com.StorageMethod}}</span>
                   </p>
                   <p>
-                      <span>身份证号：</span>
-                      <span>{{.Edu.EntityID}}</span>
+                      <span>品牌：</span>
+                      <span>{{.Com.Brand}}</span>
                   </p>
                   <p>
-                      <span>毕(结)业日期：</span>
-                      <span>{{.Edu.GraduationDate}}</span>
+                      <span>生产厂商：</span>
+                      <span>{{.Com.Vendor}}</span>
                   </p>
                   <p>
-                      <span>专业：</span>
-                      <span>{{.Edu.Major}}</span>
+                      <span>生产地：</span>
+                      <span>{{.Com.PlaceOfProduction}}</span>
                   </p>
 
                   <p>
-                      <span>学习形式：</span>
-                      <span>{{.Edu.Mode}}</span>
-                  </p>
-                  <p>
-                      <span>学制：</span>
-                      <span>{{.Edu.Length}}</span>
-                  </p>
-                  <p>
-                      <span>证书编号：</span>
-                      <span>{{.Edu.CertNo}}</span>
+                      <span>执行标准：</span>
+                      <span>{{.Com.ExecutiveStandard}}</span>
                   </p>
               </div>
               <div class="headImg">
-                  <img src="{{.Edu.Photo}}" alt="">
+                  <img src="{{.Com.Photo}}" alt="">
               </div>
           </div>
           <p>
               {{if eq .CurrentUser.IsAdmin "T"}}
-                  <a href="/modifyPage?certNo={{.Edu.CertNo}}&name={{.Edu.Name}}">修改信息</a>
+                  <a href="/modifyPage?certNo={{.Com.CertNo}}&name={{.Com.Name}}">修改信息</a>
               {{end}}
               <a href="/index">返回首页</a>
           </p>

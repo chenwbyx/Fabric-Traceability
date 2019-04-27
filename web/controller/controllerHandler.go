@@ -33,7 +33,6 @@ func (app *Application) Help(w http.ResponseWriter, r *http.Request)  {
 	ShowView(w, r, "help.html", data)
 }
 
-// 用户登录
 func (app *Application) Login(w http.ResponseWriter, r *http.Request) {
 	loginName := r.FormValue("loginName")
 	password := r.FormValue("password")
@@ -66,13 +65,11 @@ func (app *Application) Login(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-// 用户登出
 func (app *Application) LoginOut(w http.ResponseWriter, r *http.Request)  {
 	cuser = User{}
 	ShowView(w, r, "login.html", nil)
 }
 
-// 显示添加信息页面
 func (app *Application) AddEduShow(w http.ResponseWriter, r *http.Request)  {
 	data := &struct {
 		CurrentUser User
@@ -86,7 +83,6 @@ func (app *Application) AddEduShow(w http.ResponseWriter, r *http.Request)  {
 	ShowView(w, r, "addEdu.html", data)
 }
 
-// 添加信息
 func (app *Application) AddEdu(w http.ResponseWriter, r *http.Request)  {
 
 	edu := service.Education{
@@ -148,7 +144,6 @@ func (app *Application) QueryPage(w http.ResponseWriter, r *http.Request)  {
 	ShowView(w, r, "query.html", data)
 }
 
-// 根据证书编号与姓名查询信息
 func (app *Application) FindCertByNoAndName(w http.ResponseWriter, r *http.Request)  {
 	certNo := r.FormValue("certNo")
 	name := r.FormValue("name")
@@ -194,10 +189,32 @@ func (app *Application) QueryPage2(w http.ResponseWriter, r *http.Request)  {
 	ShowView(w, r, "query2.html", data)
 }
 
-// 根据身份证号码查询信息
 func (app *Application) FindByID(w http.ResponseWriter, r *http.Request)  {
 	entityID := r.FormValue("entityID")
-	result, err := app.Setup.FindEduInfoByEntityID(entityID)
+	result, err := app.Setup.FindComInfoByEntityID(entityID)
+	var com = service.Commodity{}
+	json.Unmarshal(result, &com)
+
+	data := &struct {
+		Com service.Commodity
+		CurrentUser User
+		Msg string
+		Flag bool
+		History bool
+	}{
+		Com:com,
+		CurrentUser:cuser,
+		Msg:"",
+		Flag:false,
+		History:true,
+	}
+
+	if err != nil {
+		data.Msg = err.Error()
+		data.Flag = true
+	}
+
+	/*result, err := app.Setup.FindEduInfoByEntityID(entityID)
 	var edu = service.Education{}
 	json.Unmarshal(result, &edu)
 
@@ -218,12 +235,11 @@ func (app *Application) FindByID(w http.ResponseWriter, r *http.Request)  {
 	if err != nil {
 		data.Msg = err.Error()
 		data.Flag = true
-	}
+	}*/
 
 	ShowView(w, r, "queryResult.html", data)
 }
 
-// 修改/添加新信息
 func (app *Application) ModifyShow(w http.ResponseWriter, r *http.Request)  {
 	// 根据证书编号与姓名查询信息
 	certNo := r.FormValue("certNo")
@@ -253,7 +269,6 @@ func (app *Application) ModifyShow(w http.ResponseWriter, r *http.Request)  {
 	ShowView(w, r, "modify.html", data)
 }
 
-// 修改/添加新信息
 func (app *Application) Modify(w http.ResponseWriter, r *http.Request) {
 	edu := service.Education{
 		Name:r.FormValue("name"),
