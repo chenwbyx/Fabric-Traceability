@@ -286,7 +286,7 @@ func (app *Application) ModifyShow(w http.ResponseWriter, r *http.Request)  {
 		Flag:true,
 		Msg:"",
 	}
-
+	fmt.Println(com)
 	if err != nil {
 		data.Msg = err.Error()
 		data.Flag = true
