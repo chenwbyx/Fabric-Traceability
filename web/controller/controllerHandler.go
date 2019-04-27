@@ -270,8 +270,8 @@ func (app *Application) FindByID(w http.ResponseWriter, r *http.Request)  {
 
 func (app *Application) ModifyShow(w http.ResponseWriter, r *http.Request)  {
 	// 根据证书编号与姓名查询信息
-	certNo := r.FormValue("Primarykey")
-	result, err := app.Setup.FindComInfoByEntityID(certNo)
+	entityID := r.FormValue("entityID")
+	result, err := app.Setup.FindComInfoByEntityID(entityID)
 	var com = service.Commodity{}
 	json.Unmarshal(result, &com)
 
