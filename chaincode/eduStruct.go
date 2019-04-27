@@ -47,8 +47,7 @@ package main
 type Commodity struct {
 	ObjectType	   string	`json:"docType"`  //事件类型
 	Primarykey     string   `json:"primarykey"`  //主键，唯一Id
-	Name	       string	`json:"Name"`
-	Type           string   `json:"type"`  //加工方式
+	Name	       string	`json:"name"`
 	Des            string   `json:"des"`  //描述
 	Specification  string   `json:"specification"`  //规格
 	Source         string   `json:"source"`  //商品来源

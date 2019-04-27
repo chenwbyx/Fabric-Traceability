@@ -502,7 +502,6 @@ func (t *EducationChaincode) updateCom(stub shim.ChaincodeStubInterface, args []
 	}
 
 	result.Name = info.Name
-	result.Type = info.Type
 	result.Des = info.Des
 	result.Specification = info.Specification
 	result.Source = info.Source

@@ -84,9 +84,9 @@ func main() {
 	}
 
 	com := service.Commodity{
+		ObjectType:"采摘",
 		Primarykey:"001",
 		Name:"普洱茶",
-		Type:"采摘",
 		Des:"从地里采摘",
 		Specification:"500g",  //规格
 		Source:"普洱",
@@ -100,7 +100,7 @@ func main() {
 		Brand:"普洱",
 		Vendor:"云南某某厂",
 		PlaceOfProduction:"云南",
-		ExecutiveStandard:"ACB123456",
+		ExecutiveStandard:"GB/T 11766",
 		Time: time.Now().Format("2006-01-02 15:04:05"),
 	}
 

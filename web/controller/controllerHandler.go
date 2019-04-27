@@ -85,6 +85,15 @@ func (app *Application) AddEduShow(w http.ResponseWriter, r *http.Request)  {
 
 func (app *Application) AddEdu(w http.ResponseWriter, r *http.Request)  {
 
+	com := service.Commodity{
+
+	}
+
+	app.Setup.SaveCom(com)
+
+	r.Form.Set("entityID", com.Primarykey)
+	app.FindByID(w, r)
+	/*
 	edu := service.Education{
 		Name:r.FormValue("name"),
 		Gender:r.FormValue("gender"),
@@ -107,7 +116,7 @@ func (app *Application) AddEdu(w http.ResponseWriter, r *http.Request)  {
 	}
 
 	app.Setup.SaveEdu(edu)
-	/*transactionID, err := app.Setup.SaveEdu(edu)
+	transactionID, err := app.Setup.SaveEdu(edu)
 
 	data := &struct {
 		CurrentUser User
@@ -123,12 +132,13 @@ func (app *Application) AddEdu(w http.ResponseWriter, r *http.Request)  {
 		data.Msg = err.Error()
 	}else{
 		data.Msg = "信息添加成功:" + transactionID
-	}*/
+	}
 
 	//ShowView(w, r, "addEdu.html", data)
 	r.Form.Set("certNo", edu.CertNo)
 	r.Form.Set("name", edu.Name)
 	app.FindCertByNoAndName(w, r)
+	*/
 }
 
 func (app *Application) QueryPage(w http.ResponseWriter, r *http.Request)  {
