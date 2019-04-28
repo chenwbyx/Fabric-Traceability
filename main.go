@@ -136,7 +136,6 @@ func main() {
 		var edu service.Education
 		json.Unmarshal(result, &edu)
 		fmt.Println("根据溯源ID查询信息成功")
-		fmt.Println(edu)
 	}
 
 	info := service.Education{

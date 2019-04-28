@@ -180,7 +180,6 @@ func (app *Application) FindCertByNoAndName(w http.ResponseWriter, r *http.Reque
 	json.Unmarshal(result, &edu)
 
 	fmt.Println("根据证书编号与姓名查询信息成功：")
-	fmt.Println(edu)
 
 	data := &struct {
 		Edu service.Education
