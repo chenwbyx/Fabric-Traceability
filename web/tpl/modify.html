@@ -197,6 +197,7 @@
         $('.btn').click(function() {
             // 如果为空 报错提示
             for (var i = 0; i < inputs.length; i++) {
+                console.log(inputs[i])
                 if (!($(inputs[i]).val())) {
                     $(inputs[i]).addClass('redColor');
                     $('#myModal').modal('show');
