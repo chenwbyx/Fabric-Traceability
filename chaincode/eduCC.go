@@ -493,14 +493,15 @@ func (t *EducationChaincode) updateCom(stub shim.ChaincodeStubInterface, args []
 	var info Commodity
 	err := json.Unmarshal([]byte(args[0]), &info)
 	if err != nil {
-		return  shim.Error("反序列化edu信息失败")
+		return  shim.Error("反序列化com信息失败")
 	}
 
 	result, bl := GetComInfo(stub, info.Primarykey)
 	if !bl{
-		return shim.Error("根据身份证号码查询信息时发生错误")
+		return shim.Error("根据溯源编号查询信息时发生错误")
 	}
 
+	result.Type = info.Type
 	result.Name = info.Name
 	result.Des = info.Des
 	result.Specification = info.Specification
