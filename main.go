@@ -90,8 +90,8 @@ func main() {
 		Des:"从地里采摘",
 		Specification:"500g",  //规格
 		Source:"普洱",
-		Machining:"晒干",    //加工
-		Remarks:"日光",    //备注信息
+		Machining:"人工采摘",    //加工
+		Remarks:"无",    //备注信息
 		Principal:"张三",  //负责人
 		PhoneNumber:"123456789",
 		Photo:"/static/photo/11.png",   // 照片
