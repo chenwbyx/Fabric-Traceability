@@ -61,7 +61,7 @@ func main() {
 		ChaincodeID:EduCC,
 		Client:channelClient,
 	}
-
+	/*
 	edu := service.Education{
 		Name: "张三",
 		Gender: "男",
@@ -82,7 +82,7 @@ func main() {
 		Photo: "/static/photo/11.png",
 		Time: time.Now().Format("2006-01-02 15:04:05"),
 	}
-
+	*/
 	com := service.Commodity{
 		Type:"采摘",
 		Primarykey:"001",
@@ -104,40 +104,52 @@ func main() {
 		Time: time.Now().Format("2006-01-02 15:04:05"),
 	}
 
+	coms := []service.Commodity{
+		service.Commodity{Type:"采摘", Primarykey:"002", Name:"铁观音", Des:"从地里采摘", Specification:"500g", Source:"普洱", Machining:"人工采摘",Remarks:"无",Principal:"张三",PhoneNumber:"123456789", Photo:"/static/photo/11.png", ShelfLife:"一年", StorageMethod:"避光，常温", Brand:"普洱", Vendor:"云南某某厂", PlaceOfProduction:"云南", ExecutiveStandard:"GB/T 11766", Time: time.Now().Format("2006-01-02 15:04:05"),},
+		service.Commodity{Type:"采摘", Primarykey:"003", Name:"大红袍", Des:"从地里采摘", Specification:"500g", Source:"普洱", Machining:"人工采摘",Remarks:"无",Principal:"张三",PhoneNumber:"123456789", Photo:"/static/photo/11.png", ShelfLife:"一年", StorageMethod:"避光，常温", Brand:"普洱", Vendor:"云南某某厂", PlaceOfProduction:"云南", ExecutiveStandard:"GB/T 11766", Time: time.Now().Format("2006-01-02 15:04:05"),},
+		service.Commodity{Type:"采摘", Primarykey:"004", Name:"小青柑", Des:"从地里采摘", Specification:"500g", Source:"普洱", Machining:"人工采摘",Remarks:"无",Principal:"张三",PhoneNumber:"123456789", Photo:"/static/photo/11.png", ShelfLife:"一年", StorageMethod:"避光，常温", Brand:"普洱", Vendor:"云南某某厂", PlaceOfProduction:"云南", ExecutiveStandard:"GB/T 11766", Time: time.Now().Format("2006-01-02 15:04:05"),},
+	}
 
+	for _,v := range coms {
+		msg, err := serviceSetup.SaveCom(v)
+		if err != nil {
+			fmt.Println(err.Error())
+		}else {
+			fmt.Println("信息发布成功, 交易编号为: " + msg)
+		}
+	}
+	/*
 	msg, err := serviceSetup.SaveEdu(edu)
 	if err != nil {
 		fmt.Println(err.Error())
 	}else {
 		fmt.Println("信息发布成功, 交易编号为: " + msg)
 	}
-
-	msg, err = serviceSetup.SaveCom(com)
+	*/
+	msg, err := serviceSetup.SaveCom(com)
 	if err != nil {
 		fmt.Println(err.Error())
 	}else {
 		fmt.Println("信息发布成功, 交易编号为: " + msg)
 	}
-
+	/*
 	result, err := serviceSetup.FindEduInfoByEntityID("101")
 	if err != nil {
 		fmt.Println(err.Error())
 	} else {
 		var edu service.Education
 		json.Unmarshal(result, &edu)
-		fmt.Println("根据身份证号码查询信息成功")
 		//fmt.Println(edu)
 	}
-
-	result, err = serviceSetup.FindComInfoByEntityID("001")
+	*/
+	result, err := serviceSetup.FindComInfoByEntityID("001")
 	if err != nil {
 		fmt.Println(err.Error())
 	} else {
 		var edu service.Education
 		json.Unmarshal(result, &edu)
-		fmt.Println("根据溯源ID查询信息成功")
 	}
-
+	/*
 	info := service.Education{
 		Name: "张三",
 		Gender: "男",
@@ -171,31 +183,18 @@ func main() {
 	} else {
 		var edu service.Education
 		json.Unmarshal(result, &edu)
-		fmt.Println("根据身份证号码查询信息成功")
 		//fmt.Println(edu)
 	}
 
-	// 根据证书编号与名称查询信息
 	result, err = serviceSetup.FindEduByCertNoAndName("333","张三")
 	if err != nil {
 		fmt.Println(err.Error())
 	} else {
 		var edu service.Education
 		json.Unmarshal(result, &edu)
-		fmt.Println("根据证书编号与姓名查询信息成功")
 		//fmt.Println(edu)
 	}
-
-	/*
-	msg, err = serviceSetup.DelEdu("101")
-	if err != nil {
-		fmt.Println(err.Error())
-	}else {
-		fmt.Println("信息删除成功, 交易编号为: " + msg)
-	}
-
 	*/
-
 	//===========================================//
 
 	app := controller.Application{
