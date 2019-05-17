@@ -14,21 +14,21 @@ import (
 const (
 	configFile = "config.yaml"
 	initialized = false
-	EduCC = "educc"
+	ComCC = "comcc"
 )
 
 func main() {
 
 	initInfo := &sdkInit.InitInfo{
 
-		ChannelID: "kevinkongyixueyuan",
+		ChannelID: "traceability",
 		ChannelConfig: os.Getenv("GOPATH") + "/src/github.com/chenwbyx/Fabric-Traceability/fixtures/artifacts/channel.tx",
 
 		OrgAdmin:"Admin",
 		OrgName:"Org1",
 		OrdererOrgName: "orderer.kevin.kongyixueyuan.com",
 
-		ChaincodeID: EduCC,
+		ChaincodeID: ComCC,
 		ChaincodeGoPath: os.Getenv("GOPATH"),
 		ChaincodePath: "github.com/chenwbyx/Fabric-Traceability/chaincode/",
 		UserName:"User1",
@@ -58,7 +58,7 @@ func main() {
 	//===========================================//
 
 	serviceSetup := service.ServiceSetup{
-		ChaincodeID:EduCC,
+		ChaincodeID:ComCC,
 		Client:channelClient,
 	}
 	/*
