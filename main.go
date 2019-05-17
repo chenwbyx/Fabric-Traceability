@@ -21,7 +21,7 @@ func main() {
 
 	initInfo := &sdkInit.InitInfo{
 
-		ChannelID: "traceability",
+		ChannelID: "kevinkongyixueyuan",
 		ChannelConfig: os.Getenv("GOPATH") + "/src/github.com/chenwbyx/Fabric-Traceability/fixtures/artifacts/channel.tx",
 
 		OrgAdmin:"Admin",
