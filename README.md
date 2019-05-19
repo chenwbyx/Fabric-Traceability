@@ -30,5 +30,5 @@ docker-compose 1.12.0
 
 
 ------
-作者 [@chenwb](https://github.com/chenwbyx/)  
+作者 [@chenwb](https://github.com/chenwbyx/)
 2019 年 3 月 30 日

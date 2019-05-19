@@ -19,17 +19,7 @@ func (t *EducationChaincode) Invoke(stub shim.ChaincodeStubInterface) peer.Respo
 	// 获取用户意图
 	fun, args := stub.GetFunctionAndParameters()
 
-	if fun == "addEdu"{
-		return t.addEdu(stub, args)		// 添加信息
-	}else if fun == "queryEduByCertNoAndName" {
-		return t.queryEduByCertNoAndName(stub, args)		// 根据证书编号及姓名查询信息
-	}else if fun == "queryEduInfoByEntityID" {
-		return t.queryEduInfoByEntityID(stub, args)	// 根据身份证号码及姓名查询详情
-	}else if fun == "updateEdu" {
-		return t.updateEdu(stub, args)		// 根据证书编号更新信息
-	}else if fun == "delEdu"{
-		return t.delEdu(stub, args)	// 根据证书编号删除信息
-	}else if fun == "addCom"{
+	if fun == "addCom"{
 		return t.addCom(stub, args)
 	}else if fun == "queryComByCertNoAndName" {
 		return t.queryComByCertNoAndName(stub, args)

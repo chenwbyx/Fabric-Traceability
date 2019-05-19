@@ -18,13 +18,9 @@ var users []User
 func init() {
 
 	admin := User{LoginName:"admin", Password:"123456", IsAdmin:"T"}
-	alice := User{LoginName:"ChainDesk", Password:"123456", IsAdmin:"T"}
-	bob := User{LoginName:"alice", Password:"123456", IsAdmin:"F"}
-	jack := User{LoginName:"bob", Password:"123456", IsAdmin:"F"}
+	wenbo := User{LoginName:"wenbo", Password:"123456", IsAdmin:"F"}
 
 	users = append(users, admin)
-	users = append(users, alice)
-	users = append(users, bob)
-	users = append(users, jack)
+	users = append(users, wenbo)
 
 }

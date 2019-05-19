@@ -7,29 +7,6 @@ import (
 	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/fab"
 )
 
-type Education struct {
-	ObjectType	string	`json:"docType"`
-	Name	string	`json:"Name"`
-	Gender	string	`json:"Gender"`
-	Nation	string	`json:"Nation"`
-	EntityID	string	`json:"EntityID"`
-	Place	string	`json:"Place"`
-	BirthDay	string	`json:"BirthDay"`
-	EnrollDate	string	`json:"EnrollDate"`
-	GraduationDate	string	`json:"GraduationDate"`
-	SchoolName	string	`json:"SchoolName"`
-	Major	string	`json:"Major"`
-	QuaType	string	`json:"QuaType"`
-	Length	string	`json:"Length"`
-	Mode	string	`json:"Mode"`
-	Level	string	`json:"Level"`
-	Graduation	string	`json:"Graduation"`
-	CertNo	string	`json:"CertNo"`
-	Photo	string	`json:"Photo"`
-	Historys	[]HistoryItem
-	Time    string  `json:"Time"`
-}
-
 type Commodity struct {
 	ObjectType	   string	`json:"docType"`
 	Type           string	`json:"type"`  //事件类型
@@ -57,7 +34,6 @@ type Commodity struct {
 
 type HistoryItem struct {
 	TxId	string
-	Education	Education
 	Commodity   Commodity
 }
 
