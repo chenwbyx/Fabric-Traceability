@@ -130,7 +130,7 @@ func (t *EducationChaincode) queryComByCertNoAndName(stub shim.ChaincodeStubInte
 	queryString := fmt.Sprintf("{\"selector\":{\"docType\":\"%s\", \"CertNo\":\"%s\", \"Name\":\"%s\"}}", DOC_TYPE, CertNo, name)
 
 	// 查询数据
-	result, err := getEduByQueryString(stub, queryString)
+	result, err := getComByQueryString(stub, queryString)
 	if err != nil {
 		return shim.Error("根据证书编号及姓名查询信息时发生错误")
 	}
