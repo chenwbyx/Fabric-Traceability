@@ -23,12 +23,12 @@ docker-compose 1.12.0
 * Step 2：
    * 敲命令：```make```
    * 看到如下输出表示运行成功
-     ![img](https://github.com/chenwbyx/Fabric-Traceability/blob/master/img/update_findEduByCertNoAndName.png)
+     ![img](https://github.com/chenwbyx/Fabric-Traceability/blob/master/img/build.png)
 * Step 3：
    * 访问```http://localhost:8000```
-     ![img](https://github.com/chenwbyx/Fabric-Traceability/blob/master/img/html_index.png)
+     ![img](https://github.com/chenwbyx/Fabric-Traceability/blob/master/img/index.png)
 
 
 ------
-作者 [@chenwb](https://github.com/chenwbyx/)
+作者 [@chenwb](https://github.com/chenwbyx/)  
 2019 年 3 月 30 日
