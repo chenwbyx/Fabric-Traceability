@@ -108,7 +108,7 @@ func main() {
 	if err != nil {
 		fmt.Println(err.Error())
 	} else {
-		var edu service.Education
+		var edu service.Commodity
 		json.Unmarshal(result, &edu)
 	}
 
