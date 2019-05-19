@@ -61,28 +61,6 @@ func main() {
 		ChaincodeID:ComCC,
 		Client:channelClient,
 	}
-	/*
-	edu := service.Education{
-		Name: "张三",
-		Gender: "男",
-		Nation: "汉",
-		EntityID: "101",
-		Place: "北京",
-		BirthDay: "1991年01月01日",
-		EnrollDate: "2009年9月",
-		GraduationDate: "2013年7月",
-		SchoolName: "中国政法大学",
-		Major: "社会学",
-		QuaType: "普通",
-		Length: "四年",
-		Mode: "普通全日制",
-		Level: "本科",
-		Graduation: "毕业",
-		CertNo: "111",
-		Photo: "/static/photo/11.png",
-		Time: time.Now().Format("2006-01-02 15:04:05"),
-	}
-	*/
 	com := service.Commodity{
 		Type:"采摘",
 		Primarykey:"001",
@@ -118,30 +96,14 @@ func main() {
 			fmt.Println("信息发布成功, 交易编号为: " + msg)
 		}
 	}
-	/*
-	msg, err := serviceSetup.SaveEdu(edu)
-	if err != nil {
-		fmt.Println(err.Error())
-	}else {
-		fmt.Println("信息发布成功, 交易编号为: " + msg)
-	}
-	*/
+
 	msg, err := serviceSetup.SaveCom(com)
 	if err != nil {
 		fmt.Println(err.Error())
 	}else {
 		fmt.Println("信息发布成功, 交易编号为: " + msg)
 	}
-	/*
-	result, err := serviceSetup.FindEduInfoByEntityID("101")
-	if err != nil {
-		fmt.Println(err.Error())
-	} else {
-		var edu service.Education
-		json.Unmarshal(result, &edu)
-		//fmt.Println(edu)
-	}
-	*/
+
 	result, err := serviceSetup.FindComInfoByEntityID("001")
 	if err != nil {
 		fmt.Println(err.Error())
@@ -149,52 +111,7 @@ func main() {
 		var edu service.Education
 		json.Unmarshal(result, &edu)
 	}
-	/*
-	info := service.Education{
-		Name: "张三",
-		Gender: "男",
-		Nation: "汉",
-		EntityID: "101",
-		Place: "北京",
-		BirthDay: "1991年01月01日",
-		EnrollDate: "2013年9月",
-		GraduationDate: "2015年7月",
-		SchoolName: "中国政法大学",
-		Major: "社会学",
-		QuaType: "普通",
-		Length: "两年",
-		Mode: "普通全日制",
-		Level: "研究生",
-		Graduation: "毕业",
-		CertNo: "333",
-		Photo: "/static/photo/11.png",
-		Time: time.Now().Format("2006-01-02 15:04:05"),
-	}
-	msg, err = serviceSetup.ModifyEdu(info)
-	if err != nil {
-		fmt.Println(err.Error())
-	}else {
-		fmt.Println("信息操作成功, 交易编号为: " + msg)
-	}
 
-	result, err = serviceSetup.FindEduInfoByEntityID("101")
-	if err != nil {
-		fmt.Println(err.Error())
-	} else {
-		var edu service.Education
-		json.Unmarshal(result, &edu)
-		//fmt.Println(edu)
-	}
-
-	result, err = serviceSetup.FindEduByCertNoAndName("333","张三")
-	if err != nil {
-		fmt.Println(err.Error())
-	} else {
-		var edu service.Education
-		json.Unmarshal(result, &edu)
-		//fmt.Println(edu)
-	}
-	*/
 	//===========================================//
 
 	app := controller.Application{
