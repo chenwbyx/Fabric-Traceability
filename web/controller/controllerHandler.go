@@ -4,7 +4,6 @@ import (
 	"net/http"
 	"encoding/json"
 	"github.com/chenwbyx/Fabric-Traceability/service"
-	"fmt"
 	"time"
 )
 
@@ -70,18 +69,6 @@ func (app *Application) LoginOut(w http.ResponseWriter, r *http.Request)  {
 	ShowView(w, r, "login.html", nil)
 }
 
-func (app *Application) AddEduShow(w http.ResponseWriter, r *http.Request)  {
-	data := &struct {
-		CurrentUser User
-		Msg string
-		Flag bool
-	}{
-		CurrentUser:cuser,
-		Msg:"",
-		Flag:false,
-	}
-	ShowView(w, r, "addEdu.html", data)
-}
 
 func (app *Application) AddEdu(w http.ResponseWriter, r *http.Request)  {
 
@@ -124,37 +111,6 @@ func (app *Application) QueryPage(w http.ResponseWriter, r *http.Request)  {
 		Flag:false,
 	}
 	ShowView(w, r, "query.html", data)
-}
-
-func (app *Application) FindCertByNoAndName(w http.ResponseWriter, r *http.Request)  {
-	certNo := r.FormValue("certNo")
-	name := r.FormValue("name")
-	result, err := app.Setup.FindEduByCertNoAndName(certNo, name)
-	var edu = service.Education{}
-	json.Unmarshal(result, &edu)
-
-	fmt.Println("根据证书编号与姓名查询信息成功：")
-
-	data := &struct {
-		Edu service.Education
-		CurrentUser User
-		Msg string
-		Flag bool
-		History bool
-	}{
-		Edu:edu,
-		CurrentUser:cuser,
-		Msg:"",
-		Flag:false,
-		History:false,
-	}
-
-	if err != nil {
-		data.Msg = err.Error()
-		data.Flag = true
-	}
-
-	ShowView(w, r, "queryResult.html", data)
 }
 
 func (app *Application) QueryPage2(w http.ResponseWriter, r *http.Request)  {
