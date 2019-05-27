@@ -69,6 +69,19 @@ func (app *Application) LoginOut(w http.ResponseWriter, r *http.Request)  {
 	ShowView(w, r, "login.html", nil)
 }
 
+func (app *Application) AddEduShow(w http.ResponseWriter, r *http.Request)  {
+	data := &struct {
+		CurrentUser User
+		Msg string
+		Flag bool
+	}{
+		CurrentUser:cuser,
+		Msg:"",
+		Flag:false,
+	}
+	ShowView(w, r, "addEdu.html", data)
+}
+
 
 func (app *Application) AddEdu(w http.ResponseWriter, r *http.Request)  {
 
@@ -112,6 +125,8 @@ func (app *Application) QueryPage(w http.ResponseWriter, r *http.Request)  {
 	}
 	ShowView(w, r, "query.html", data)
 }
+
+
 
 func (app *Application) QueryPage2(w http.ResponseWriter, r *http.Request)  {
 	data := &struct {

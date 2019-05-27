@@ -21,10 +21,10 @@ func WebStart(app controller.Application)  {
 	http.HandleFunc("/", app.Index)
 	http.HandleFunc("/help", app.Help)
 
-	//http.HandleFunc("/addEduInfo", app.AddEduShow)
-	//http.HandleFunc("/addEdu", app.AddEdu)
+	http.HandleFunc("/addEduInfo", app.AddEduShow)
+	http.HandleFunc("/addEdu", app.AddEdu)
 
-	//http.HandleFunc("/queryPage", app.QueryPage)
+	http.HandleFunc("/queryPage", app.QueryPage)
 	//http.HandleFunc("/query", app.FindCertByNoAndName)
 
 	http.HandleFunc("/queryPage2", app.QueryPage2)
