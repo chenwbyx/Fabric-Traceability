@@ -122,5 +122,6 @@ func InstallAndInstantiateCC(sdk *fabsdk.FabricSDK, info *InitInfo) (*channel.Cl
 
 	fmt.Println("通道客户端创建成功，可以利用此客户端调用链码进行查询或执行事务.")
 
+
 	return channelClient, nil
 }

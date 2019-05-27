@@ -36,8 +36,8 @@ func WebStart(app controller.Application)  {
 
 	http.HandleFunc("/upload", app.UploadFile)
 
-	fmt.Println("启动Web服务, 监听端口号为: 8080")
-	err := http.ListenAndServe("localhost:8080", nil)
+	fmt.Println("启动Web服务, 监听端口号为: 8001")
+	err := http.ListenAndServe("localhost:8001", nil)
 	if err != nil {
 		fmt.Printf("Web服务启动失败: %v", err)
 	}
