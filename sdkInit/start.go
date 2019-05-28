@@ -63,11 +63,10 @@ func CreateChannel(sdk *fabsdk.FabricSDK, info *InitInfo) error {
 	// SaveChannelRequest holds parameters for save channel request
 	channelReq := resmgmt.SaveChannelRequest{ChannelID:info.ChannelID, ChannelConfigPath:info.ChannelConfig, SigningIdentities:[]msp.SigningIdentity{adminIdentity}}
 	// save channel response with transaction ID
-	 _, err = resMgmtClient.SaveChannel(channelReq, resmgmt.WithRetry(retry.DefaultResMgmtOpts), resmgmt.WithOrdererEndpoint(info.OrdererOrgName))
+	_, err = resMgmtClient.SaveChannel(channelReq, resmgmt.WithRetry(retry.DefaultResMgmtOpts), resmgmt.WithOrdererEndpoint(info.OrdererOrgName))
 	if err != nil {
 		return fmt.Errorf("创建应用通道失败: %v", err)
 	}
-
 	fmt.Println("通道已成功创建，")
 
 	info.OrgResMgmt = resMgmtClient
@@ -77,8 +76,13 @@ func CreateChannel(sdk *fabsdk.FabricSDK, info *InitInfo) error {
 	if err != nil {
 		return fmt.Errorf("Peers加入通道失败: %v", err)
 	}
-
 	fmt.Println("peers 已成功加入通道.")
+
+	//channels,err := resMgmtClient.QueryChannels()
+	//for _,responsechannel := range channels.Channels {
+	//	fmt.Println("The channel info is :%s", responsechannel.ChannelId)
+	//}
+
 	return nil
 }
 
@@ -121,7 +125,6 @@ func InstallAndInstantiateCC(sdk *fabsdk.FabricSDK, info *InitInfo) (*channel.Cl
 	}
 
 	fmt.Println("通道客户端创建成功，可以利用此客户端调用链码进行查询或执行事务.")
-
 
 	return channelClient, nil
 }

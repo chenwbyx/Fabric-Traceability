@@ -43,7 +43,7 @@ func GetComInfo(stub shim.ChaincodeStubInterface, primarykey string) (Commodity,
 	if b == nil {
 		return com, false
 	}
-
+	fmt.Println("GetComInfo",b)
 	err = json.Unmarshal(b, &com)
 	if err != nil {
 		return com, false
