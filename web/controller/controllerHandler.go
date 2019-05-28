@@ -19,10 +19,10 @@ func (app *Application) LoginView(w http.ResponseWriter, r *http.Request)  {
 func (app *Application) Index(w http.ResponseWriter, r *http.Request)  {
 	data := &struct {
 		Flag bool
-		num string
+		Num string
 	}{
 		Flag:false,
-		num:string(strconv.Itoa(int(app.Setup.BlockNumber))),
+		Num:string(strconv.Itoa(int(app.Setup.BlockNumber))),
 	}
 	fmt.Println("BlockNumber Now:",app.Setup.BlockNumber)
 	ShowView(w, r, "index.html", data)
