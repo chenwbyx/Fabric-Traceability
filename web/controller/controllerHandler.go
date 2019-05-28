@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"github.com/chenwbyx/Fabric-Traceability/service"
 	"time"
-	"fmt"
 	"strconv"
 )
 
@@ -24,7 +23,6 @@ func (app *Application) Index(w http.ResponseWriter, r *http.Request)  {
 		Flag:false,
 		Num:string(strconv.Itoa(int(app.Setup.BlockNumber))),
 	}
-	fmt.Println("BlockNumber Now:",app.Setup.BlockNumber)
 	ShowView(w, r, "index.html", data)
 }
 
@@ -53,9 +51,11 @@ func (app *Application) Login(w http.ResponseWriter, r *http.Request) {
 	data := &struct {
 		CurrentUser User
 		Flag bool
+		Num string
 	}{
 		CurrentUser:cuser,
 		Flag:false,
+		Num:string(strconv.Itoa(int(app.Setup.BlockNumber))),
 	}
 
 	if flag {
