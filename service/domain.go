@@ -40,6 +40,7 @@ type HistoryItem struct {
 type ServiceSetup struct {
 	ChaincodeID	string
 	Client	*channel.Client
+	BlockNumber uint64
 }
 
 func regitserEvent(client *channel.Client, chaincodeID, eventID string) (fab.Registration, <-chan *fab.CCEvent) {
@@ -51,12 +52,14 @@ func regitserEvent(client *channel.Client, chaincodeID, eventID string) (fab.Reg
 	return reg, notifier
 }
 
-func eventResult(notifier <-chan *fab.CCEvent, eventID string) error {
+func eventResult(notifier <-chan *fab.CCEvent, eventID string)(uint64, error) {
 	select {
 	case ccEvent := <-notifier:
 		fmt.Printf("接收到链码事件: %v\n", ccEvent)
+
+		return ccEvent.BlockNumber, nil
 	case <-time.After(time.Second * 20):
-		return fmt.Errorf("不能根据指定的事件ID接收到相应的链码事件(%s)", eventID)
+		return 0, fmt.Errorf("不能根据指定的事件ID接收到相应的链码事件(%s)", eventID)
 	}
-	return nil
+	return 0, nil
 }

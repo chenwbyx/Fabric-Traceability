@@ -28,11 +28,11 @@ func (t *ServiceSetup) SaveCom(com Commodity) (string, error) {
 		return "", err
 	}
 
-	err = eventResult(notifier, eventID)
+	number, err := eventResult(notifier, eventID)
 	if err != nil {
 		return "", err
 	}
-
+	t.BlockNumber = number
 	return string(respone.TransactionID), nil
 }
 
@@ -77,11 +77,11 @@ func (t *ServiceSetup) ModifyCom(com Commodity) (string, error) {
 		return "", err
 	}
 
-	err = eventResult(notifier, eventID)
+	number, err := eventResult(notifier, eventID)
 	if err != nil {
 		return "", err
 	}
-
+	t.BlockNumber = number
 	return string(respone.TransactionID), nil
 }
 
@@ -97,11 +97,11 @@ func (t *ServiceSetup) DelCom(entityID string) (string, error) {
 		return "", err
 	}
 
-	err = eventResult(notifier, eventID)
+	number, err := eventResult(notifier, eventID)
 	if err != nil {
 		return "", err
 	}
-
+	t.BlockNumber = number
 	return string(respone.TransactionID), nil
 }
 

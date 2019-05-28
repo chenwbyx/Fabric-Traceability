@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"github.com/chenwbyx/Fabric-Traceability/service"
 	"time"
+	"fmt"
 )
 
 var cuser User
@@ -17,9 +18,12 @@ func (app *Application) LoginView(w http.ResponseWriter, r *http.Request)  {
 func (app *Application) Index(w http.ResponseWriter, r *http.Request)  {
 	data := &struct {
 		Flag bool
+		num uint64
 	}{
 		Flag:false,
+		num:app.Setup.BlockNumber,
 	}
+	fmt.Println("BlockNumber Now:",app.Setup.BlockNumber)
 	ShowView(w, r, "index.html", data)
 }
 
