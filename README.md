@@ -10,14 +10,16 @@
 
 ### 所需环境
 ```
-go 1.10
+Ubuntu 16.04
+Go version>=1.12 and GO111MODULE=on
 docker 18.09.2
 docker-compose 1.12.0
 ```
 
 ### 安装及配置
 * Step 1：
-   * 创建并进入目录 $GOPATH/src/github.com/
+   * 创建并进入目录 /home/ubuntu/go/src/github.com/chenwbyx
+        > 此为证书文件所需路径，可自行在代码里修改
    * 拉项目```git clone https://github.com/chenwbyx/Fabric-Traceability.git ```
    * 进入文件夹：```cd chenwbyx/Fabric-Traceability```
 * Step 2：
